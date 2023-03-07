@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ChartController;
 use App\Http\Controllers\Admin\ClientReviewController;
 use App\Http\Controllers\Admin\ContactController;
-use App\Http\Controllers\Admin\CoursesController;
+use App\Http\Controllers\Admin\PlansController;
 use App\Http\Controllers\Admin\FooterController;
 
 use App\Http\Controllers\Admin\InformationController;
@@ -24,10 +24,10 @@ Route::get('/clientreview',[ClientReviewController::class, 'onAllSelect']);
 // Contact Form Route 
 Route::post('/contactsend',[ContactController::class, 'onContactSend']);
 
-// Course All Routes 
-Route::get('/coursehome',[CoursesController::class, 'onSelectFour']);
-Route::get('/courseall',[CoursesController::class, 'onSelectAll']);
-Route::post('/coursedetails',[CoursesController::class, 'OnSelectDetails']);
+// plans All Routes 
+Route::get('/planshome',[PlansController::class, 'onSelectFour']);
+Route::get('/plansall',[PlansController::class, 'onSelectAll']);
+Route::get('/plansdetails',[PlansController::class, 'OnSelectDetails']);
 
 // Footer Route 
 Route::get('/footerdata',[FooterController::class, 'onSelectAll']);
