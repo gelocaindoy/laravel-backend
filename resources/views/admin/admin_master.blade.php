@@ -8,12 +8,13 @@
     <title>React - Admin Dashboard </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('backend/images/favicon.png') }} ">
-	<link rel="stylesheet" href="{{ asset('backend/vendor/chartist/css/chartist.min.css') }} ">
+    <link rel="stylesheet" href="{{ asset('backend/vendor/chartist/css/chartist.min.css') }} ">
     <link href="{{ asset('backend/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }} " rel="stylesheet">
-	<link href="{{ asset('backend/vendor/owl-carousel/owl.carousel.css') }} " rel="stylesheet">
+    <link href="{{ asset('backend/vendor/owl-carousel/owl.carousel.css') }} " rel="stylesheet">
     <link href="{{ asset('backend/css/style.css') }} " rel="stylesheet">
-	
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 </head>
+
 <body>
 
     <!--*******************
@@ -38,7 +39,7 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-      @include('admin.body.header')
+        @include('admin.body.header')
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
@@ -46,15 +47,15 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-       @include('admin.body.sidebar')
+        @include('admin.body.sidebar')
         <!--**********************************
             Sidebar end
         ***********************************-->
-		
-		<!--**********************************
+
+        <!--**********************************
             Content body start
         ***********************************-->
-       @yield('admin')
+        @yield('admin')
         <!--**********************************
             Content body end
         ***********************************-->
@@ -62,16 +63,16 @@
         <!--**********************************
             Footer start
         ***********************************-->
-       @include('admin.body.footer')
+        @include('admin.body.footer')
         <!--**********************************
             Footer end
         ***********************************-->
-		
-		
-		
-		
-		
-		<!--**********************************
+
+
+
+
+
+        <!--**********************************
            Support ticket button start
         ***********************************-->
 
@@ -90,23 +91,44 @@
     ***********************************-->
     <!-- Required vendors -->
     <script src="{{ asset('backend/vendor/global/global.min.js') }} "></script>
-	<script src="{{ asset('backend/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }} "></script>
-	<script src="{{ asset('backend/vendor/chart.js/Chart.bundle.min.js') }} "></script>
-	
-	<!-- Chart piety plugin files -->
+    <script src="{{ asset('backend/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }} "></script>
+    <script src="{{ asset('backend/vendor/chart.js/Chart.bundle.min.js') }} "></script>
+
+    <!-- Chart piety plugin files -->
     <script src="{{ asset('backend/vendor/peity/jquery.peity.min.js') }} "></script>
-	
-	<!-- Apex Chart -->
-	<script src="{{ asset('backend/vendor/apexchart/apexchart.js') }} "></script>
-	
-	<!-- Dashboard 1 -->
-	<script src="{{ asset('backend/js/dashboard/dashboard-1.js') }} "></script>
-	
-	<script src="{{ asset('backend/vendor/owl-carousel/owl.carousel.js') }} "></script>
+
+    <!-- Apex Chart -->
+    <script src="{{ asset('backend/vendor/apexchart/apexchart.js') }} "></script>
+
+    <!-- Dashboard 1 -->
+    <script src="{{ asset('backend/js/dashboard/dashboard-1.js') }} "></script>
+
+    <script src="{{ asset('backend/vendor/owl-carousel/owl.carousel.js') }} "></script>
     <script src="{{ asset('backend/js/custom.min.js') }} "></script>
-	<script src="{{ asset('backend/js/deznav-init.js') }} "></script>
-    
-    
+    <script src="{{ asset('backend/js/deznav-init.js') }} "></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        @if (Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}"
+            switch (type) {
+                case 'info':
+                    toastr.info(" {{ Session::get('message') }} ");
+                    break;
+                case 'success':
+                    toastr.success(" {{ Session::get('message') }} ");
+                    break;
+                case 'warning':
+                    toastr.warning(" {{ Session::get('message') }} ");
+                    break;
+                case 'error':
+                    toastr.error(" {{ Session::get('message') }} ");
+                    break;
+            }
+        @endif
+    </script>
+
 
 </body>
+
 </html>
