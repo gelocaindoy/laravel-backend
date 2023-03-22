@@ -85,3 +85,21 @@ Route::prefix('plans')->group(function(){
     Route::get('/delete/{id}',[PlansController::class, 'Deleteplans'])->name('delete.plans'); 
     
     });
+
+
+    // Information All Routes 
+Route::prefix('information')->group(function(){
+
+    Route::get('/all',[InformationController::class, 'AllInformation'])->name('all.information');
+    
+    Route::get('/add',[InformationController::class, 'AddInformation'])->name('add.information');
+    
+    Route::post('/store',[InformationController::class, 'StoreInformation'])->name('information.store');
+    
+    Route::get('/edit/{id}',[InformationController::class, 'EditInformation'])->name('edit.information');
+    
+    Route::post('/update/{id}',[InformationController::class, 'UpdateInformation'])->name('information.update');
+    
+    Route::get('/delete/{id}',[InformationController::class, 'DeleteInformation'])->name('delete.information'); 
+    
+    });
