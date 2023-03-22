@@ -68,3 +68,20 @@ Route::prefix('project')->group(function(){
     Route::get('/delete/{id}',[ProjectController::class, 'DeleteProject'])->name('delete.project'); 
     
     });
+
+     // plans All Routes 
+Route::prefix('plans')->group(function(){
+
+    Route::get('/all',[PlansController::class, 'Allplans'])->name('all.plans');
+    
+    Route::get('/add',[PlansController::class, 'Addplans'])->name('add.plans');
+    
+    Route::post('/store',[PlansController::class, 'Storeplans'])->name('plans.store');
+    
+    Route::get('/edit/{id}',[PlansController::class, 'Editplans'])->name('edit.plans');
+    
+    Route::post('/update/',[PlansController::class, 'Updateplans'])->name('plans.update');
+    
+    Route::get('/delete/{id}',[PlansController::class, 'Deleteplans'])->name('delete.plans'); 
+    
+    });
