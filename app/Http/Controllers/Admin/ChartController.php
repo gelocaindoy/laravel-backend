@@ -15,5 +15,38 @@ class ChartController extends Controller
     } // end method 
 
 
-}
+    public function AllChartContent(){
+        $chart = Chart::all();
+        return view('backend.chart.all_chart',compact('chart'));
+    } // end method
+    
+    
+    public function EditChartContent($id){
+        $chart = Chart::findOrFail($id);
+        return view('backend.chart.edit_chart',compact('chart'));
+    
+    } // end method
+    
+    
+    public function UpdateChartContent(Request $request){
+    
+            $chart_id = $request->id;
+    
+        Chart::findOrFail($chart_id)->update([
+            //databasename         //Header
+            'x_data' => $request->Techonology,
+            'y_data' => $request->Projects,
+    
+        ]);
+    
+            $notification = array(
+            'message' => 'Chart Updated Successfully',
+            'alert-type' => 'success'
+        );
+    
+        return redirect()->route('all.chart.content')->with($notification);
+    
+    } // end method 
+    
+    }
  

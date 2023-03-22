@@ -8,6 +8,9 @@ use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\PlansController;
 use App\Http\Controllers\Admin\HomePageEtcController;
 use App\Http\Controllers\Admin\FooterController;
+use App\Http\Controllers\Admin\ChartController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\ClientReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -152,6 +155,19 @@ Route::prefix('footer')->group(function(){
     Route::get('/edit/{id}',[ClientReviewController::class, 'EditReview'])->name('edit.review');
     
     Route::post('/update/',[ClientReviewController::class, 'UpdateReview'])->name('review.update');
+    
+    Route::get('/delete/{id}',[ClientReviewController::class, 'DeleteReview'])->name('delete.review'); 
+    
+    });
+
+     // Chart Content All Routes 
+Route::prefix('chart')->group(function(){
+
+    Route::get('/all',[ChartController::class, 'AllChartContent'])->name('all.chart.content');
+    
+    Route::get('/edit/{id}',[ChartController::class, 'EditChartContent'])->name('edit.chart');
+    
+    Route::post('/update/',[ChartController::class, 'UpdateChartContent'])->name('chart.update');
     
     Route::get('/delete/{id}',[ClientReviewController::class, 'DeleteReview'])->name('delete.review'); 
     
