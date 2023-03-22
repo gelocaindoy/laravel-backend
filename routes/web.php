@@ -51,3 +51,20 @@ Route::post('/user/profile/store',[AdminUserController::class, 'UserProfileStore
     Route::get('/delete/{id}',[ServiceController::class, 'DeleteService'])->name('delete.service'); 
     
     });
+     
+    // Project All Routes 
+Route::prefix('project')->group(function(){
+
+    Route::get('/all',[ProjectController::class, 'AllProject'])->name('all.projects');
+    
+    Route::get('/add',[ProjectController::class, 'AddProject'])->name('add.projects');
+    
+    Route::post('/store',[ProjectController::class, 'StoreProject'])->name('project.store');
+    
+    Route::get('/edit/{id}',[ProjectController::class, 'EditProject'])->name('edit.project');
+    
+    Route::post('/update/',[ProjectController::class, 'UpdateProject'])->name('project.update');
+    
+    Route::get('/delete/{id}',[ProjectController::class, 'DeleteProject'])->name('delete.project'); 
+    
+    });
