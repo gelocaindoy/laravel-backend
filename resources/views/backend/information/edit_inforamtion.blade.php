@@ -63,9 +63,9 @@
             </div>
 
                <div class="form-group">
-                <label class="info-title">Trems And Condition</label>
-                <textarea class="form-control" name="trems" id="summernote3">
-                    {{ $information->trems }}
+                <label class="info-title">Terms And Condition</label>
+                <textarea class="form-control" name="terms" id="summernote3">
+                    {{ $information->terms }}
                 </textarea>
             </div>    
 

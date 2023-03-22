@@ -33,7 +33,7 @@ class InformationController extends Controller
        Information::insert([
        	'about' => $request->about,
        	'refund' => $request->refund,
-       	'trems' => $request->trems,
+       	'terms' => $request->terms,
        	'privacy' => $request->privacy,
 
        ]);
@@ -60,7 +60,7 @@ class InformationController extends Controller
     	 Information::findOrFail($id)->update([
        	'about' => $request->about,
        	'refund' => $request->refund,
-       	'trems' => $request->trems,
+       	'terms' => $request->terms,
        	'privacy' => $request->privacy,
 
        ]);

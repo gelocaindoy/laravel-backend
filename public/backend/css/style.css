@@ -1542,7 +1542,8 @@ pre {
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  color: #7e7e7e; }
+  color: #c4c4c4;
+  }
   .table th,
   .table td {
     padding: 0.75rem;
@@ -3635,11 +3636,12 @@ input[type="button"].btn-block {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.75rem; }
+  border-radius: 0.75rem;
+  }
   .card > hr {
     margin-right: 0;
     margin-left: 0; }
@@ -5148,7 +5150,8 @@ button.bg-dark:focus {
   border-radius: 0.3rem !important; }
 
 .rounded-circle {
-  border-radius: 50% !important; }
+  border-radius: 50% !important;
+  }
 
 .rounded-pill {
   border-radius: 50rem !important; }
@@ -9319,8 +9322,11 @@ a {
     font-size: 1.125rem;
     color: #fff;
     text-decoration: none;
+    padding-top: 21px;
+    padding-left: 7px;
+    /* padding-top: 50px;
     padding-left: 50px;
-    padding-right: 50px;
+    padding-right: 50px; */
     font-weight: 700; }
     [data-sidebar-style="compact"] .nav-header .brand-logo, [data-sidebar-style="mini"] .nav-header .brand-logo {
       padding-left: 0;
@@ -9330,6 +9336,7 @@ a {
       .nav-header .brand-logo {
         padding-left: 0;
         padding-right: 0;
+        display: none;
         justify-content: center; } }
   .nav-header .brand-title {
     margin-left: 20px;
@@ -9343,7 +9350,12 @@ a {
     height: 5rem; } }
 @media only screen and (max-width: 1023px) {
   .nav-header {
-    width: 5rem; }
+    width: 5rem; 
+    .brand-logo {
+      display: none;
+    }
+  
+  }
     .nav-header .brand-title {
       display: none; } }
 .nav-control {
@@ -32454,8 +32466,9 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   max-width: 100px;
   position: relative;
   z-index: 1;
-  margin-top: -40px;
-  margin-right: 10px; }
+  margin-top: -23px;
+  margin-right: 12px;
+  }
   @media only screen and (max-width: 575px) {
     .profile .profile-photo {
       width: 80px;

@@ -45,7 +45,7 @@ class ContactController extends Controller
         Contact::findOrFail($id)->delete();
 
         $notification = array(
-            'message' => 'Contact Message Delected Successfully',
+            'message' => 'Contact Message Deleted Successfully',
             'alert-type' => 'success'
         );
 

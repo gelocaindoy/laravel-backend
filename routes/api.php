@@ -19,15 +19,16 @@ use App\Http\Controllers\Admin\HomePageEtcController;
 // });
 // Chart Route 
 Route::get('/chartdata',[ChartController::class, 'onAllSelect']);
+Route::put('/chartdata',[ChartController::class, 'EditChartContent']);
 // Client Review Route 
 Route::get('/clientreview',[ClientReviewController::class, 'onAllSelect']);
 // Contact Form Route 
 Route::post('/contactsend',[ContactController::class, 'onContactSend']);
 
-// plans All Routes 
+// Plans All Routes 
 Route::get('/planshome',[PlansController::class, 'onSelectFour']);
 Route::get('/plansall',[PlansController::class, 'onSelectAll']);
-Route::get('/plansdetails',[PlansController::class, 'OnSelectDetails']);
+Route::get('/plansdetails/{plansId}',[PlansController::class, 'OnSelectDetails']);
 
 // Footer Route 
 Route::get('/footerdata',[FooterController::class, 'onSelectAll']);
@@ -41,7 +42,7 @@ Route::get('/services',[ServiceController::class, 'ServiceView']);
 // Project All Routes 
 Route::get('/projecthome',[ProjectController::class, 'onSelectThree']);
 Route::get('/projectall',[ProjectController::class, 'onSelectAll']);
-Route::post('/projectdetails',[ProjectController::class, 'ProjectDetails']);
+Route::get('/projectdetails/{projectId}',[ProjectController::class, 'ProjectDetails']);
 
 // Home Etc All Routes 
 Route::get('/home/video',[HomePageEtcController::class, 'SelectVideo']);

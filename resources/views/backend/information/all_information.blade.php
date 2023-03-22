@@ -45,7 +45,7 @@
                     
                     <th><strong>About</strong></th>
                     <th><strong>Refund Policy</strong></th>
-                    <th><strong>Trems And Condition</strong></th>
+                    <th><strong>Terms And Condition</strong></th>
                     <th><strong>Privacy And Policy</strong></th>
                    
                     <th></th>
@@ -58,7 +58,7 @@
          
         <td>{{ Str::limit($item->about, 20, '..') }}</td>
         <td>{{ Str::limit($item->refund, 20, '..') }}  </td>
-        <td>{{ Str::limit($item->trems, 20, '..') }} </td>
+        <td>{{ Str::limit($item->terms, 20, '..') }} </td>
         <td>{{ Str::limit($item->privacy, 20, '..') }} </td>
         
           <td>
