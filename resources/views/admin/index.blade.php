@@ -1,7 +1,7 @@
 @extends('admin.admin_master')
 @section('admin')
 
-
+<!-- 
  <div class="content-body">
 			<div class="container-fluid">
 				<div class="form-head mb-sm-5 mb-3 d-flex flex-wrap align-items-center">
@@ -254,7 +254,7 @@
 
 				 
 			</div>
-		</div>
+		</div> -->
 
 
 
