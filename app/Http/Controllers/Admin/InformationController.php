@@ -15,6 +15,7 @@ class InformationController extends Controller
 
     } // end mehtod 
 
+
     public function AllInformation(){
     	$result = Information::all();
     	return view('backend.information.all_information',compact('result'));
@@ -32,7 +33,7 @@ class InformationController extends Controller
        Information::insert([
        	'about' => $request->about,
        	'refund' => $request->refund,
-       	'terms' => $request->terms,
+       	'trems' => $request->trems,
        	'privacy' => $request->privacy,
 
        ]);
@@ -59,7 +60,7 @@ class InformationController extends Controller
     	 Information::findOrFail($id)->update([
        	'about' => $request->about,
        	'refund' => $request->refund,
-       	'terms' => $request->terms,
+       	'trems' => $request->trems,
        	'privacy' => $request->privacy,
 
        ]);
@@ -89,3 +90,4 @@ class InformationController extends Controller
 
 
 }
+ 

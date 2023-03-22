@@ -14,6 +14,7 @@ class ClientReviewController extends Controller
     	return $result;
 
     } // end method 
+
     public function AllReview(){
     	$review = ClientReview::all();
     	return view('backend.review.all_review',compact('review'));
@@ -126,4 +127,4 @@ class ClientReviewController extends Controller
 
 
 }
- 
+  
