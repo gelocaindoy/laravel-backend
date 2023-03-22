@@ -139,3 +139,9 @@ Route::prefix('footer')->group(function(){
     Route::get('/delete/{id}',[ClientReviewController::class, 'DeleteReview'])->name('delete.review'); 
     
     });
+
+
+    
+Route::get('/all',[ContactController::class, 'AllContactMessage'])->name('contact.message');
+
+Route::get('/delete/message/{id}',[ContactController::class, 'DeleteContactMessage'])->name('delete.message'); 
