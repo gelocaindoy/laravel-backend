@@ -140,7 +140,22 @@ Route::prefix('footer')->group(function(){
     
     });
 
+ // Client Review All Routes 
+ Route::prefix('review')->group(function(){
 
+    Route::get('/all',[ClientReviewController::class, 'AllReview'])->name('all.review');
+    
+    Route::get('/add',[ClientReviewController::class, 'AddReview'])->name('add.review');
+    
+    Route::post('/store',[ClientReviewController::class, 'StoreReview'])->name('review.store');
+    
+    Route::get('/edit/{id}',[ClientReviewController::class, 'EditReview'])->name('edit.review');
+    
+    Route::post('/update/',[ClientReviewController::class, 'UpdateReview'])->name('review.update');
+    
+    Route::get('/delete/{id}',[ClientReviewController::class, 'DeleteReview'])->name('delete.review'); 
+    
+    });
     
 Route::get('/all',[ContactController::class, 'AllContactMessage'])->name('contact.message');
 
