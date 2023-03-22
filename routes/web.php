@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\Admin\InformationController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\PlansController;
+use App\Http\Controllers\Admin\HomePageEtcController;
+use App\Http\Controllers\Admin\FooterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,5 +107,35 @@ Route::prefix('information')->group(function(){
     Route::post('/update/{id}',[InformationController::class, 'UpdateInformation'])->name('information.update');
     
     Route::get('/delete/{id}',[InformationController::class, 'DeleteInformation'])->name('delete.information'); 
+    
+    });
+
+    // Home Content All Routes 
+Route::prefix('home')->group(function(){
+
+    Route::get('/all',[HomePageEtcController::class, 'AllHomeContent'])->name('all.home.content');
+    
+    Route::get('/add',[HomePageEtcController::class, 'AddHomeContent'])->name('add.home.content');
+    
+    Route::post('/store',[HomePageEtcController::class, 'StoreHomeContent'])->name('homecontent.store');
+    
+    Route::get('/edit/{id}',[HomePageEtcController::class, 'EditHomeContent'])->name('edit.homecontent');
+    
+    Route::post('/update/',[HomePageEtcController::class, 'UpdateHomeContent'])->name('homecontent.update');
+    
+    Route::get('/delete/{id}',[HomePageEtcController::class, 'DeleteHomeContent'])->name('delete.homecontent'); 
+    
+    });
+
+    // Footer Content All Routes 
+Route::prefix('footer')->group(function(){
+
+    Route::get('/all',[FooterController::class, 'AllFooterContent'])->name('all.footer.content');
+    
+    Route::get('/edit/{id}',[FooterController::class, 'EditFooterContent'])->name('edit.footer');
+    
+    Route::post('/update/',[FooterController::class, 'UpdateFooterContent'])->name('footer.update');
+    
+    Route::get('/delete/{id}',[ClientReviewController::class, 'DeleteReview'])->name('delete.review'); 
     
     });
