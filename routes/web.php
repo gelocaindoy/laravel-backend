@@ -34,3 +34,20 @@ Route::get('/user/profile/edit',[AdminUserController::class, 'UserProfileEdit'])
 Route::post('/user/profile/store',[AdminUserController::class, 'UserProfileStore'])->name('user.profile.store');
 
 });
+
+ // Services All Routes 
+ Route::prefix('service')->group(function(){
+
+    Route::get('/all',[ServiceController::class, 'AllService'])->name('all.services');
+    
+    Route::get('/add',[ServiceController::class, 'AddService'])->name('add.services');
+    
+    Route::post('/store',[ServiceController::class, 'StoreService'])->name('service.store');
+    
+    Route::get('/edit/{id}',[ServiceController::class, 'EditService'])->name('edit.service');
+    
+    Route::post('/update/',[ServiceController::class, 'UpdateService'])->name('service.update');
+    
+    Route::get('/delete/{id}',[ServiceController::class, 'DeleteService'])->name('delete.service'); 
+    
+    });
